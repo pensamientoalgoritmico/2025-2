@@ -1,0 +1,17 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 2rem;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #00f;
+}
+
+ul{
+    list-style: none;
+}
