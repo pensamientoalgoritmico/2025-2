@@ -1,0 +1,90 @@
+/* Plantilla tomada de Eevi Rutanen -Final project template, Aalto University */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+/* Centrado del canvas */
+#canvasContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#info {
+  margin: 60px;
+}
+
+#return {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#return:hover {
+  color: #39FF14;
+}
+
+/* ------------------------- */
+/* Tus estilos personalizados */
+/* ------------------------- */
+
+body {
+  background-color: #111;
+  color: #f5f5f5;
+  font-family: "Courier New", monospace;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2em;
+  color: #ff007f;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.intro {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+canvas {
+  border: 3px solid #ff007f;
+  margin-top: 10px;
+}
+
+button, select, input {
+  background-color: #ff007f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover, select:hover {
+  background-color: #ff2fbf;
+}
+
+input {
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #ff007f;
+}
+
+select {
+  border-radius: 5px;
+}
