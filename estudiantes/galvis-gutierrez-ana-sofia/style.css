@@ -1,0 +1,181 @@
+
+
+@font-face {
+    font-family: "CITYBURN";
+    src: url("cityburn.ttf");
+}
+
+/* Fondo tipo ladrillo y neblina bogotana */
+body {
+    font-family: "CITYBURN", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2f2f2f;
+    text-align: center;
+
+    background: linear-gradient(
+        rgba(255,255,255,0.7),
+        rgba(255,255,255,0.9)
+    ),
+    url("fondo_ladrillo.jpg");
+
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Títulos estilo mural callejero */
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #1a3a6b; /* Azul SITP */
+    letter-spacing: 2px;
+
+    text-shadow: 
+        3px 3px 0px #ffd600,  /* amarillo taxi */
+        -2px -2px 0px #d32c2c; /* rojo TM */
+}
+
+.subtitulo {
+    font-size: 20px;
+    color: #3a3a3a;
+    margin-top: -10px;
+}
+
+/* Pantallas */
+.pantalla {
+    padding: 35px;
+}
+
+.oculto {
+    display: none;
+}
+
+/* ===========================================
+   BOTONES ESTILO BOGOTANO
+   =========================================== */
+
+button {
+    font-family: "CITYBURN";
+    font-size: 22px;
+    padding: 14px 30px;
+    margin: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    background: #1a3a6b;
+    color: white;
+    border: 3px solid #ffd600;
+    border-radius: 10px;
+
+    box-shadow: 4px 4px 0px #d32c2c;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #224b8a;
+    box-shadow: 6px 6px 0px #a82121;
+}
+
+button:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+/* ===========================================
+   Input de archivo 
+   =========================================== */
+input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #1a3a6b;
+    background: #e9eef7;
+    border-radius: 10px;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+input[type="file"]:hover {
+    background: #dce4f5;
+}
+
+/* Canvas centrado */
+main {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===========================================
+   PANEL DE STICKERS
+   =========================================== */
+#stickerPanel {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 214, 0, 0.15);
+    border-top: 3px solid #1a3a6b;
+    display: flex;
+    justify-content: center;
+}
+
+#stickerCarousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    max-width: 90%;
+}
+
+.stickerOption {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    border-radius: 15px;
+    background: white;
+    border: 2px solid #1a3a6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.stickerOption:hover {
+    transform: scale(1.1);
+    background: #e8e8e8;
+    border-color: #d32c2c;
+}
+
+/* ===========================================
+    GALERÍA DE ILUSTRACIONES
+   =========================================== */
+#galeriaIlustraciones {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    padding: 20px;
+    align-items: start; /* Evita deformaciones */
+}
+
+.ilustraMini {
+    width: auto;          /* Mantiene tamaño real */
+    height: auto;         /* Mantiene altura real */
+    max-width: 100%;      /* Ajuste para que no se salga del cuadro */
+    object-fit: contain;  /* NO recorta ni deforma */
+
+    border-radius: 15px;
+    border: 4px solid #1a3a6b;
+    box-shadow: 6px 6px 0px #d32c2c;
+    background: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ilustraMini:hover {
+    transform: scale(1.05);
+    border-color: #ffd600;
+}
+
+

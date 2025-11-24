@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Bogotá respira ruido</title>
+  </head>
+
+  <body>
+    <!-- INTRO -->
+    <section id="intro" class="pantalla">
+      <h1>Bogotá respira ruido</h1>
+
+      <div class="menu-opciones">
+        <button id="btnIlustraciones">Ver ilustraciones</button>
+        <button id="btnPoster">Generar póster</button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DEL POSTER -->
+    <section id="posterUI" class="pantalla oculto">
+      <h1>Generador de Póster</h1>
+
+      <p class="subtitulo">Sube una imagen y genera tu póster bogotano.</p>
+
+      <div class="barra-controles">
+        <input id="inputImagen" type="file" accept="image/*" />
+        <button id="botonVertical">Canvas vertical</button>
+        <button id="botonHorizontal">Canvas horizontal</button>
+        <button id="botonFrases" disabled>Generar texto</button>
+      </div>
+
+      <div id="stickerPanel">
+        <div id="stickerCarousel"></div>
+      </div>
+
+      <p class="instruccion">Presiona “S” para guardar tu póster final.</p>
+      <button id="btnDescargar">Descargar póster</button>
+
+      <button id="volverIntro1">Volver</button>
+      <main></main>
+      <div id="galeriaBogota"></div>
+    </section>
+
+    <!-- SECCIÓN ILUSTRACIONES -->
+    <section id="ilustraciones" class="pantalla oculto">
+      <h1>Ilustraciones</h1>
+
+      <!-- GALERÍA DE ILUSTRACIONES LISTA  -->
+      <div id="galeriaIlustraciones">
+        <img src="img/ilustracion1.png" class="ilustraMini" />
+        <img src="img/ilustracion2.png" class="ilustraMini" />
+        <img src="img/ilustracion3.png" class="ilustraMini" />
+        <img src="img/ilustracion4.png" class="ilustraMini" />
+        <img src="img/ilustracion5.png" class="ilustraMini" />
+        <img src="img/ilustracion6.png" class="ilustraMini" />
+        <img src="img/ilustracion7.png" class="ilustraMini" />
+        <img src="img/ilustracion8.png" class="ilustraMini" />
+      </div>
+
+      <button id="volverIntro1">Volver</button>
+    </section>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
