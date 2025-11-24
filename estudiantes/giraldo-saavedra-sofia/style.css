@@ -1,0 +1,57 @@
+/* Plantilla tomada de Eevi Rutanen -Final project template, Aalto University */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background:black;
+  color: white;
+  font-family: sans-serif;
+}
+canvas {
+  display: block;
+}
+
+/*this element centers the canvas in the window */
+#canvasContainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* ← importante: permite que sliders se apilen debajo del canvas */
+}
+
+#info{
+  margin: 60px;
+}
+
+h1{
+  font-weight: normal;
+}
+
+h2{
+   font-weight: normal;
+}
+
+#return{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+#return:hover{
+  color: #39FF14
+}
+
+/* -------------------------------
+   Estilo para sliders dentro del contenedor
+--------------------------------*/
+#canvasContainer input[type=range] {
+  width: 180px;
+  margin: 8px 0;
+  accent-color: #4A90E2; /* color del thumb */
+  border-radius: 4px;
+  height: 6px;
+  border: none;
+}
+
