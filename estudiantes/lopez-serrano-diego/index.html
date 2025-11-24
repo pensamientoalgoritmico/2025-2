@@ -18,6 +18,7 @@
     <script src="p5.sound.min.js"></script>
   </head>
   <body>
+    <!-- Texto invisible para precargar fuente -->
     <div
       style="
         font-family: 'Plaster';
@@ -31,6 +32,7 @@
     </div>
 
     <main>
+      <!-- Panel de UI -->
       <div id="ui">
         <h2
           style="
@@ -46,6 +48,7 @@
           nostálgica y callejera.
         </p>
 
+        <!-- Formulario -->
         <form id="user-form">
           <label>Nombre</label>
           <input type="text" name="nombre" placeholder="Tu nombre" required />
@@ -113,6 +116,7 @@
             </div>
           </div>
 
+          <!-- Botones -->
           <div class="actions">
             <button class="primary" type="submit">Generar</button>
             <button class="secondary" id="regen" type="button">
@@ -122,6 +126,7 @@
           </div>
         </form>
 
+        <!-- Controles -->
         <div class="controls">
           <h3>Controles del letrero</h3>
           <label for="text-size">Tamaño del texto</label>
@@ -155,9 +160,10 @@
         </div>
       </div>
 
+      <!-- Composición -->
       <div id="canvas-holder"></div>
 
-      <!-- <div id="canvasContainer"></div> -->
+      <!-- Bloque de texto -->
       <div id="info">
         <h1>Mí Bogotá</h1>
         <h3>Diego López</h3>
@@ -169,8 +175,8 @@
           relación entre la persona que vive y conoce Bogotá con este lugar
           único y especial.
         </p>
-        <!--       flecha para volver cuando esté en un sitio web -->
-        <a href="./" id="return">&larr;</a>
+        <!-- flecha para volver -->
+        <a href="/2025-2/" id="return">&larr;</a>
       </div>
     </main>
 
