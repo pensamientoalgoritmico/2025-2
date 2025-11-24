@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Titulo del proyecto</title>
+
+    <!-- Librerías p5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- Estilo base -->
+    <style>
+      body {
+        background-color: #111;
+        color: #fff;
+        font-family: "Bebas Neue", sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      #interface {
+        margin-top: 20px;
+      }
+
+      .sticker-btn {
+        background: #ffdd00;
+        border: 3px solid black;
+        padding: 12px 25px;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 15px;
+        box-shadow: 4px 4px 0px black;
+        cursor: pointer;
+        margin: 8px;
+      }
+
+      #stickerInput {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 12px;
+        border: 2px solid black;
+        box-shadow: 3px 3px 0px black;
+        margin: 8px;
+      }
+
+      #canvasContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div id="canvasContainer"></div>
+
+      <!-- BOTONES CON ESTÉTICA DE STICKER -->
+      <button class="sticker-btn" onclick="volverInicio()">Inicio</button>
+      <button class="sticker-btn" onclick="cambiarPalabra()">
+        Cambiar Señal
+      </button>
+
+      <input
+        type="text"
+        id="stickerInput"
+        placeholder="Escribe tu sticker aquí"
+      />
+
+      <button class="sticker-btn" onclick="agregarSticker()">
+        Agregar Sticker
+      </button>
+      <button class="sticker-btn" onclick="borrarSticker()">
+        Borrar Último Sticker
+      </button>
+      <button class="sticker-btn" onclick="guardarComposicion()">
+        Guardar Imagen
+      </button>
+
+      <div id="info">
+        <h1>SeñalArte</h1>
+        <h3>Mariana Herreño</h3>
+        <p>
+          SeñalArte es una aplicación interactiva creada con p5.js que te
+          permite diseñar composiciones urbanas inspiradas en Bogotá. El
+          programa combina elementos visuales como edificios, lluvia y la señal
+          de tránsito como protagonista, la cual se transforma en el lienzo
+          donde puedes crear tu propia pieza de arte urbano para vivir una
+          experiencia creativa y personalizada.
+        </p>
+
+        <!-- flecha para volver -->
+        <a href="/2025-2/" id="return">&larr;</a>
+      </div>
+
+      <div id="interface"></div>
+    </main>
+
+    <!-- Archivo principal p5.js -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
