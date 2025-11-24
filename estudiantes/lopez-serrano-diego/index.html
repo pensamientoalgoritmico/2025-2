@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Bogotá — Letrero Generativo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plaster&family=Anton&family=Bangers&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+    <script src="p5.sound.min.js"></script> 
+  </head>
+  <body>
+    <div style="font-family: 'Plaster'; opacity: 0; position: absolute; height: 0; overflow: hidden;">
+        Texto invisible para forzar carga de fuente
+    </div>
+
+    <main>
+      <div id="ui">
+        <h2 style="font-family:Bangers, cursive; letter-spacing:1px; margin:0 0 8px;">
+          Mi Bogotá
+        </h2>
+        <p class="help">
+          Ingresa tu información y genera un letrero de bus con estética nostálgica y callejera.
+        </p>
+
+        <form id="user-form">
+          <label>Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+
+          <div class="row">
+            <div>
+              <label>Edad</label>
+              <input type="number" name="edad" min="0" max="120" placeholder="21" required />
+            </div>
+            <div>
+              <label>Inicio de vida en Bogotá</label>
+              <input type="text" name="inicio" placeholder="2015 / desde niño" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Lugar de nacimiento</label>
+              <input type="text" name="lugar" placeholder="Ciudad/País" required />
+            </div>
+            <div>
+              <label>Comida favorita</label>
+              <input type="text" name="comida" placeholder="Ajiaco, changua, etc." required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Lugar favorito de Bogotá</label>
+              <input type="text" name="favorito" placeholder="Ej: La Candelaria, Monserrate" />
+            </div>
+            <div>
+              <label>Palabra que describa tu Bogotá</label>
+              <input type="text" name="palabra" placeholder="Ej: nostálgico, callejero" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" type="submit">Generar</button>
+            <button class="secondary" id="regen" type="button">Regenerar colores</button>
+            <button id="clear" type="button">Limpiar</button>
+          </div>
+        </form>
+
+        <div class="controls">
+          <h3>Controles del letrero</h3>
+          <label for="text-size">Tamaño del texto</label>
+          <input id="text-size" type="range" min="0.6" max="1.6" step="0.05" value="1" />
+          <label for="sign-width">Ancho del letrero</label>
+          <input id="sign-width" type="range" min="0.7" max="1.3" step="0.05" value="1" />
+          <label for="sign-height">Altura del letrero</label>
+          <input id="sign-height" type="range" min="0.7" max="1.3" step="0.05" value="1" />
+          <button id="download" type="button">Descargar letrero</button>
+        </div>
+      </div>
+
+      <div id="canvas-holder"></div> 
+    </main>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
+<!-- Modifica y reemplazar SOLAMENTE con su información en el titulo del protecto, nombres y descripción -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+<!--     reemplazar acá: -->
+    <title>Mí Bogotá</title>
+  </head>
+  <body>
+    <main>
+        <div id="canvasContainer"></div>
+      <div id="info">
+        <h1>Mí Bogotá </h1>
+        <h3>Diego López</h3>
+        <p>Este programa genera al usuario un letrero de bus con su "vida" de rolo o en bogota. El usuario mete su información relacionada con bogotá y este le genera un letrero de bus para aludir a lo nostalgico y callejero de bogotá. Este programa busca generar y fortalecer la relación entre la persona que vive y conoce Bogotá con este lugar único y especial. </p>
+        <!--       flecha para volver cuando esté en un sitio web -->
+      <a href="/" id="return">&larr;</a>
+      </div>
+
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>

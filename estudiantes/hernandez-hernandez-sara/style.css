@@ -1,0 +1,137 @@
+/* --- ESTILO GENERAL --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+/* --- ESTILO RETRO PARA EL PANEL PRINCIPAL --- */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  font-family: "Press Start 2P", monospace;
+  color: #00ffff;
+}
+
+/* Layout retro */
+.layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  gap: 30px;
+}
+
+/* Panel izquierdo */
+.panel-izquierdo {
+  flex: 1;
+  background-color: rgba(10, 10, 30, 0.8);
+  border: 2px solid #00ffff;
+  padding: 20px;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.panel-izquierdo h1 {
+  color: #ff00ff;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #ff00ff;
+}
+
+.panel-izquierdo h2 {
+  color: #ffcc00;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.instrucciones {
+  font-size: 10px;
+  color: #00ffff;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.control {
+  margin-top: 15px;
+  font-size: 10px;
+  color: #fff;
+}
+
+input,
+select {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  padding: 6px;
+  border: 2px solid #00ffff;
+  background: black;
+  color: #00ffff;
+  margin-top: 5px;
+  width: 90%;
+}
+
+button {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  color: #000;
+  background-color: #ffcc00;
+  border: 2px solid #ff00ff;
+  padding: 8px 10px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff00ff;
+  color: #fff;
+}
+
+.btnPersonaje.activo {
+  background-color: #ff00ff;
+  color: #fff;
+  border-color: #00ffff;
+  box-shadow: 0 0 6px #00ffff;
+}
+
+/* Panel derecho */
+.panel-derecho {
+  flex: 1;
+  text-align: center;
+}
+
+.panel-derecho h2 {
+  color: #ffcc00;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#canvasContainer {
+  border: 3px solid #00ffff;
+  width: 420px;
+  height: 420px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* --- ESTILO SOBRIO PARA LA SECCIÓN INFO --- */
+#info {
+  margin: 60px;
+  color: white;
+  font-family: sans-serif;
+}
+
+#info h1, #info h2, #info h3 {
+  font-weight: normal;
+}
+
+#return {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#return:hover {
+  color: #39FF14;
+}

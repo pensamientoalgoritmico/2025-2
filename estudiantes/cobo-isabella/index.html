@@ -1,0 +1,186 @@
+<!-- Modifica y reemplazar SOLAMENTE con su información en el titulo del protecto, nombres y descripción -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- p5.js + p5.dom -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.dom.min.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>BOGOTÁ EN MINUTOS — THE Bogotown Project</title>
+  </head>
+  <body>
+    <main>
+      <!-- Contenedor general donde vive la app -->
+      <div id="canvasContainer">
+        <!-- Onboarding -->
+        <div id="onboarding" class="overlay" aria-hidden="false">
+          <div class="overlay-card">
+            <div class="slides" role="region" aria-roledescription="slides">
+              <article class="slide" data-index="0">
+                <h1>
+                  <span class="h-break">Bienvenido a</span><br />
+                  <span class="h-break">THE Bogotown Project</span>
+                </h1>
+                <p>
+                  Hola!! Soy Isabella, una caleña viviendo en Bogotá. Después
+                  de un año en “la nevera”, se me ocurrió crear este proyecto,
+                  a partir de los famosos posters minuteros que se ven en toda
+                  la ciudad. Esta herramienta funciona como una forma de
+                  desahogo visual para todas esas personas —rolos y foráneos—
+                  que a veces aman y a veces odian esta ciudad.
+                </p>
+              </article>
+
+              <article class="slide" data-index="1">
+                <h1>¿De qué va esto?</h1>
+                <p>
+                  La idea es tener un espacio donde podamos quejarnos, reírnos,
+                  contar anécdotas y mirar a Bogotá con otros ojos, sin tanta
+                  seriedad y con mucha más honestidad. Este proyecto busca que
+                  nuestras y nuestros usuarios personalicen sus mensajes a la
+                  ciudad.
+                </p>
+              </article>
+
+              <article class="slide" data-index="2">
+                <h1>¿Cómo Interactuar?</h1>
+                <p>
+                  A la izquierda encontrarás un menú con varias herramientas
+                  para personalizar tu mensaje. Arrastra las palabras de
+                  servicios hacia el póster, ajústales el tamaño y descarga tu
+                  cartel. ¡Súmate a The Bogotown Revolution!
+                </p>
+              </article>
+            </div>
+
+            <div class="overlay-actions">
+              <button class="nav prev" aria-label="Anterior" type="button">
+                ←
+              </button>
+              <div class="overlay-dots" aria-hidden="true"></div>
+              <div class="actions-right">
+                <button class="nav next" aria-label="Siguiente" type="button">
+                  →
+                </button>
+                <button id="startBtn" type="button" hidden>Empezar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- App principal (canvas + UI) -->
+        <div id="app">
+          <!-- Lienzo de p5 -->
+          <div id="canvas-holder"></div>
+
+          <!-- Panel de controles -->
+          <div id="ui">
+            <h2>THE BOGOTOWN PROJECT</h2>
+            <p class="hint">
+              Escribe tu mensaje para Bogotá, elige tipografía y color del
+              cartel, arrastra los servicios al póster, ajusta el tamaño de
+              cada palabra y descarga tu afiche en PNG.
+            </p>
+
+            <!-- Mensaje principal -->
+            <label for="mensaje">Mensaje para Bogotá</label>
+            <textarea
+              id="mensaje"
+              rows="4"
+              placeholder="Escribe tu mensaje aquí..."
+            ></textarea>
+
+            <!-- Firma -->
+            <label for="nombre">Firma</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" />
+
+            <!-- Tipografía -->
+            <label for="tipo">Tipografía</label>
+            <select id="tipo">
+              <option>Arial</option>
+              <option>Georgia</option>
+              <option>Condensada</option>
+              <option>Impact</option>
+              <option selected>Typewriter</option>
+            </select>
+
+            <!-- Paleta de color -->
+            <label for="paleta">Color del cartel</label>
+            <select id="paleta">
+              <option selected>Verde</option>
+              <option>Rosado</option>
+              <option>Naranja</option>
+              <option>Amarillo</option>
+            </select>
+
+            <!-- Servicios disponibles -->
+            <label>Arrastra tus servicios favoritos al póster</label>
+            <div id="servicios-menu">
+              <span class="servicio-item" data-servicio="MINUTOS">MINUTOS</span>
+              <span class="servicio-item" data-servicio="RECARGAS"
+                >RECARGAS</span
+              >
+              <span class="servicio-item" data-servicio="FOTOCOPIAS"
+                >FOTOCOPIAS</span
+              >
+              <span class="servicio-item" data-servicio="EMPANADAS"
+                >EMPANADAS</span
+              >
+              <span class="servicio-item" data-servicio="JUGOS">JUGOS</span>
+              <span class="servicio-item" data-servicio="TINTO">TINTO</span>
+              <span class="servicio-item" data-servicio="AROMÁTICAS"
+                >AROMÁTICAS</span
+              >
+            </div>
+
+            <!-- Controles de tamaño para servicios ya puestos -->
+            <label>Tamaño Servicios</label>
+            <div id="servicios-activos"></div>
+
+            <!-- Opciones extra -->
+            <div class="row">
+              <input type="checkbox" id="ruido" />
+              <label for="ruido">Agregar desgaste</label>
+            </div>
+
+            <!-- Edad / desgaste -->
+            <label for="edad">Intensidad del desgaste</label>
+            <input type="range" id="edad" min="0" max="100" value="30" />
+
+            <!-- Botón guardar -->
+            <button id="guardar" type="button">
+              Descargar Tu Proyecto (png)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info del proyecto (parte de la plantilla original) -->
+      <div id="info">
+        <h1>BOGOTÁ EN MINUTOS — THE Bogotown Project</h1>
+        <h3>Isabella Cobo O. · 202420352</h3>
+        <p>
+          Generador de un póster tipo aviso de “servicios” bogotano inspirado
+          en los carteles minuteros de la ciudad. El usuario puede escribir un
+          mensaje para Bogotá, firmarlo, escoger tipografía y color del cartel,
+          arrastrar servicios típicos al aviso, cambiar el tamaño de cada
+          palabra y aplicar un efecto de desgaste según la “edad” del póster
+          antes de descargarlo como imagen PNG.
+        </p>
+
+        <!-- Flecha para volver cuando esté en un sitio web -->
+        <a href="/" id="return">&larr;</a>
+      </div>
+    </main>
+
+    <!-- Lógica p5 -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
+<!-- Plantilla base tomada de Eevi Rutanen - Final project template, Aalto University -->

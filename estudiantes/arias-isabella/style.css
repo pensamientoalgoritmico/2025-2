@@ -1,0 +1,111 @@
+/* Plantilla tomada de Eevi Rutanen -Final project template, Aalto University */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background:black;
+  color: white;
+  font-family: sans-serif;
+}
+canvas {
+  display: block;
+}
+
+/*this element centers the canvas in the window */
+#canvasContainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#info{
+  margin: 60px;
+}
+
+h1{
+  font-weight: normal;
+}
+
+h2{
+   font-weight: normal;
+}
+
+#return{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+#return:hover{
+  color: #39FF14
+}
+/* Fondo mural con degradados y toques magenta/azul
+   (reemplaza el fondo negro plano manteniendo tipografía y espaciado) */
+body {
+  background:
+    radial-gradient(1200px 600px at 10% 20%, rgba(68,12,120,0.18), transparent 10%),
+    radial-gradient(900px 500px at 85% 80%, rgba(255,38,165,0.12), transparent 12%),
+    linear-gradient(180deg, #0b0b0b 0%, #15121a 40%, #1f1b26 100%);
+  font-family: Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Controles HTML alineados bajo el canvas */
+canvas {
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------
+   CONTROLES (sliders, inputs, selects, buttons)
+   estilo “neón bogotano”: bordes magenta y fondo oscuro
+   --------------------------------------------------- */
+
+input,
+select,
+button {
+  font-size: 13px;
+  padding: 6px 8px;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 2px solid #ff25a5;   /* contorno neón */
+  background: #151515;         /* fondo oscuro */
+  color: #fefefe;
+}
+
+/* Slider: solo ancho, el “accent-color” lo pusimos desde JS */
+input[type="range"] {
+  padding: 0;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Checkbox más visible */
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+
+/* Botones: look más gráfico */
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover suave */
+button:hover {
+  background: #ff25a5;
+  color: #050509;
+}
+
+/* Placeholder del input "Bogotá es..." un poco más suave */
+input::placeholder {
+  color: #bbbbbb;
+}
+

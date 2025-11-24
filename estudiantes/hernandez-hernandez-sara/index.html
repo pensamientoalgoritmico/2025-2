@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bogotá es su gente</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fuente retro Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Librerías p5.js y p5.sound -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    <script src="sketch.js" defer></script>
+  </head>
+  <body>
+    <!-- PANEL PRINCIPAL CON ESTILO RETRO -->
+    <main class="layout">
+      <!-- COLUMNA IZQUIERDA -->
+      <section class="panel-izquierdo">
+        <h1>BOGOTÁ ES SU GENTE</h1>
+
+        <p class="subtitulo">
+            tu vida en Bogota, vuélvelo un póster
+        </p>
+        <p class="instrucciones">
+A partir de elementos visuales característicos de la ciudad como sus calles, colores, música, zonas y estilos y de diferentes personajes con vestuarios variables, el sistema generará combinaciones únicas que buscan reflejar las diversas versiones de lo que significa Bogotá para cada persona.
+        </p>
+        <h2>👾 Comencemos! :</h2>
+
+        <!-- Nombre del póster -->
+        <div class="control">
+          <label for="nombrePoster">Elige el nombre:</label><br />
+          <input type="text" id="nombrePoster" placeholder="Escribe el nombre del póster" />
+        </div>
+
+        <!-- Fondo -->
+        <div class="control">
+          <label for="fondo">Fondo según ubicación:</label><br />
+          <select id="fondo">
+            <option value="0">Centro</option>
+            <option value="1">La candelaria</option>
+            <option value="2">Usaquén</option>
+            <option value="3">Chapinero</option>
+          </select>
+        </div>
+
+        <!-- Botón generar -->
+        <div class="botones">
+          <button id="btnGenerar">Generar</button>
+        </div>
+
+        <!-- Botones de personajes -->
+        <h2 class="personajes">Elige tu personaje:</h2>
+        <div class="botones">
+          <button class="btnPersonaje" data-nombre="1">Personaje 1</button>
+          <button class="btnPersonaje" data-nombre="2">Personaje 2</button>
+        </div>
+
+        <!-- Nombres de personajes -->
+        <div class="control">
+          <label for="nombrePersonaje1">Nombre del personaje 1:</label><br />
+          <input type="text" id="nombrePersonaje1" placeholder="Escribe el nombre" />
+        </div>
+
+        <div class="control">
+          <label for="nombrePersonaje2">Nombre del personaje 2:</label><br />
+          <input type="text" id="nombrePersonaje2" placeholder="Escribe el nombre" />
+        </div>
+
+        <!-- Botón guardar imagen -->
+        <div class="botones">
+          <button id="btnGuardar">Guardar imagen</button>
+        </div>
+      </section>
+
+      <!-- COLUMNA DERECHA -->
+      <section class="panel-derecho">
+        <h2>Resultado</h2>
+        <div id="canvasContainer"></div>
+      </section>
+    </main>
+
+    <!-- SECCIÓN DE INFORMACIÓN DEL PROYECTO (ESTILO SOBRIO) -->
+    <section id="info">
+      <h1>BOGOTA ES SU GENTE</h1>
+      <h3>Sara Hernandez</h3>
+      <p>
+        A partir de elementos visuales característicos de la ciudad como sus calles, colores, música, zonas y estilos y de diferentes personajes con vestuarios variables, el sistema generará combinaciones únicas que buscan reflejar las diversas versiones de lo que significa Bogotá para cada persona.
+      </p>
+      <a href="/" id="return">&larr; Volver</a>
+    </section>
+  </body>
+</html>
+
