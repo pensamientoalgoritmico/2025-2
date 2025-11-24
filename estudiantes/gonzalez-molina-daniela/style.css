@@ -1,0 +1,63 @@
+/* Plantilla tomada de Eevi Rutanen -Final project template, Aalto University */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background:black;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* El canvas de p5 */
+canvas {
+  display: block;
+}
+
+/* Zona blanca donde va el sketch */
+#canvasContainer{
+  width: 100vw;
+  height: 70vh;        /* Parte superior */
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Franja negra de info */
+#info{
+  background: black;
+  height: 30vh;        /* Parte inferior */
+  padding: 40px 60px;
+  box-sizing: border-box;
+}
+
+h1{
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+
+h2{
+  font-weight: normal;
+  margin: 0 0 20px 0;
+}
+
+p{
+  max-width: 900px;
+  line-height: 1.4;
+}
+
+/* Flecha de volver */
+#return{
+  display: inline-block;
+  margin-top: 20px;
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+#return:hover{
+  color: #39FF14;
+}
+
+/* Puedes agregar tus estilos personalizados desde aquí */

@@ -1,0 +1,192 @@
+@font-face {
+  font-family: 'Cheekbone';
+  src: url('Fonts/CheekboneDemoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OPTITimesRoman';
+  src: url('Fonts/OPTITimes-Roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'OPTITimesRoman', serif;
+  color: #5a2e2e; 
+}
+
+/* Sección de información */
+#info {
+  width: 100%;
+  padding: 30px 40px;
+  background-color: #fdf8f4;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+#info h1 {
+  font-family: 'Cheekbone', serif;
+  font-size: 32px;
+  color: #5a2e2e;
+  margin-bottom: 5px;
+}
+
+#info h3 {
+  font-size: 18px;
+  color: #5a2e2e;
+  margin-bottom: 10px;
+}
+
+#info p {
+  font-size: 14px;
+  color: #5a2e2e;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Panel de control */
+.control-panel {
+  position: absolute;   
+  bottom: 0;            
+  left: 0;
+  width: 100%; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    gap: 4px;  
+  background: rgba(235, 215, 200, 0.85);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-family: 'OPTITimesRoman', serif;
+  z-index: 1000;        
+}
+
+#canvasContainer {
+  margin-top: 20px; /* 🔴 espacio entre panel y canvas */
+  display: flex;
+  justify-content: center;
+}
+
+.panel-titulo {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Cheekbone', serif;
+  color: #5a2e2e;
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.grupo {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.control-panel label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #5a2e2e;
+  margin-right: 10px;
+}
+
+.control-panel select,
+.control-panel button {
+  font-size: 14px;
+  padding: 10px 18px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #5a2e2e;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'OPTITimesRoman', serif;
+}
+
+.control-panel button:hover,
+.control-panel select:hover {
+  background-color: #e0dcd7;
+}
+
+/* Canvas container (ajustado al ID correcto) */
+#canvasContainer {
+  margin-top: 0;  
+  display: flex;
+  justify-content: center;
+}
+
+/* Paneles específicos */
+.ilustracion-panel {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.ilustracion-panel label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.ilustracion-panel button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  margin: 4px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+}
+
+.ilustracion-panel button:hover {
+  background-color: #e0dcd7;
+}
+
+.titulo-panel {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.titulo-panel label {
+  font-size: 17px;
+  font-weight: bold;
+  color: #5a2e2e;
+}
+
+.tipografia-panel label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5a2e2e;
+  margin-right: 10px;
+}
+
+.tipografia-panel select {
+  font-size: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #5a2e2e;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tipografia-panel select:hover {
+  background-color: #e0dcd7;
+}
+
+#dibujoSelect {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  font-size: 14px;
+}
