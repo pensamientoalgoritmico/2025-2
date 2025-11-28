@@ -76,7 +76,8 @@ let botonTxtX, botonTxtY, botonTxtW, botonTxtH;
 // FUNCTION SETUP:
 
 function setup() {
-  createCanvas(900, 910); // tamaño del canvas
+  createCanvas(900, 910).parent("canvasContainer");
+  // createCanvas(900, 910); // tamaño del canvas
   rectMode(CENTER); // para que el 0,0 sea en el centro
   noStroke();
   textSize(14);

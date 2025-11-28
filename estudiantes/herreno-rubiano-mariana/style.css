@@ -1,6 +1,51 @@
+
+/* Plantilla original */
+html,
 body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: sans-serif;  
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+canvas {
+  display: block;
+}
+
+/* este elemento contenía el canvas; ahora envuelve todo el app */
+#canvasContainer {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #ffffff;
+}
+
+/* Info del proyecto (debajo / al lado, según ancho) */
+#info {
+  margin: 60px;
+  color: white;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+#return {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#return:hover {
+  color: #39ff14;
+}

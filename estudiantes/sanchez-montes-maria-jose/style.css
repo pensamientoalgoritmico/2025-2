@@ -1,10 +1,10 @@
 /*VISTIENDO BOGOSTYLE - Estilos Generales*/
-{ margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f0e6; overflow: hidden; }
-#canvas-container { display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; }
+/* { margin: 0; padding: 0; box-sizing: border-box; } */
+/* body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f0e6; overflow: hidden; margin: 0; padding: 0; box-sizing: border-box;}
+#canvas-container { display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; } */
 
 /*Botones Principales*/
-.boton-principal {
+/* .boton-principal {
   font-family: inherit;
   font-size: 18px;
   font-weight: 600;
@@ -17,10 +17,10 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f0
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
-}
-.boton-principal:hover { background-color: #1a1a1a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); }
+} */
+/* .boton-principal:hover { background-color: #1a1a1a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); } */
 
-.boton-secundario {
+/* .boton-secundario {
   font-family: inherit;
   font-size: 16px;
   padding: 12px 32px;
@@ -31,30 +31,31 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f0
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 8px;
-}
-.boton-secundario:hover { background-color: #2a2a2a; color: #f5f0e6; }
+} */
+/* .boton-secundario:hover { background-color: #2a2a2a; color: #f5f0e6; } */
 
 /*Controles de Personalización*/
-.control-group { margin: 25px 0; text-align: center; }
-.control-label { font-size: 16px; font-weight: 500; color: #2a2a2a; margin-bottom: 12px; display: block; letter-spacing: 0.5px; }
+/* .control-group { margin: 25px 0; text-align: center; }
+.control-label { font-size: 16px; font-weight: 500; color: #2a2a2a; margin-bottom: 12px; display: block; letter-spacing: 0.5px; } */
 
 /* Slider personalizado */
-input[type="range"] {
+/* input[type="range"] {
   width: 280px; height: 6px; -webkit-appearance: none; appearance: none;
   background: linear-gradient(to right, #89cff0 0%, #ff6b6b 100%);
   outline: none; border-radius: 10px; cursor: pointer;
-}
-input[type="range"]::-webkit-slider-thumb {
+} */
+/* input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none; width: 22px; height: 22px;
   background: #2a2a2a; border: 3px solid #f5f0e6; border-radius: 50%; cursor: pointer;
   transition: all 0.2s ease;
-}
-input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); box-shadow: 0 0 10px rgba(0,0,0,0.3); }
-input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; background: #2a2a2a; border: 3px solid #f5f0e6; border-radius: 50%; cursor: pointer; transition: all 0.2s ease; }
+} */
+/* input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; background: #2a2a2a; border: 3px solid #f5f0e6; border-radius: 50%; cursor: pointer; transition: all 0.2s ease; } */
 
 /* Select personalizado */
-select {
+
 /*VISTIENDO BOGOSTYLE - Estilos Generales */
+/* VISTIENDO BOGOSTYLE - Estilos Generales */
 
 * {
   margin: 0;
@@ -76,6 +77,28 @@ body {
   height: 100vh;
 }
 
+
+#info{
+  margin: 60px;
+}
+
+h1{
+  font-weight: normal;
+}
+
+h2{
+   font-weight: normal;
+}
+
+#return{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+#return:hover{
+  color: #39FF14
+}
 /* ======================================== 
    Botones Principales 
    ======================================== */
@@ -200,7 +223,7 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(42, 42, 42, 0.1);
 }
 
-/*Animaciones y Transiciones*/
+/* Animaciones y Transiciones */
 
 @keyframes fadeIn {
   from {
@@ -230,7 +253,7 @@ select:focus {
   animation: slideUp 0.5s ease;
 }
 
-/*Responsividad */
+/* Responsividad */
 
 @media (max-width: 768px) {
   .boton-principal {

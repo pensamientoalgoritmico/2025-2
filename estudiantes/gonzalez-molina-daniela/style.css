@@ -16,7 +16,7 @@ canvas {
 /* Zona blanca donde va el sketch */
 #canvasContainer{
   width: 100vw;
-  height: 70vh;        /* Parte superior */
+  height: 100vh;        /* Parte superior */
   background: white;
   display: flex;
   justify-content: center;

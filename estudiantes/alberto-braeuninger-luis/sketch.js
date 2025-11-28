@@ -24,14 +24,15 @@ let textoMovido = false; // bandera para saber si el usuario movió el texto
 let lineasRandom = [];
 let botonLineas;
 
-function preload() {//Carga de la fuente
+function preload() {
+  //Carga de la fuente
   fuenteNetwork = loadFont("NetworkFreeVersion.ttf");
 }
 
 function setup() {
   // NO EDITAR LA SIGUIENTE LINEA, HACE QUE SEA PANTALLA COMPLETA Y LO CENTRA EN WEB
   // Solo cambiar el tamaño del canvas si desea
- cnv = createCanvas(600, 600).parent("canvasContainer");
+  cnv = createCanvas(600, 600).parent("canvasContainer");
 
   textFont(fuenteNetwork);
   textAlign(CENTER, CENTER);
@@ -41,43 +42,46 @@ function setup() {
   textoX = width / 2;
   textoY = height / 2;
   textoMovido = false;
-  
-  
 
   // CONTROLES (usando position como en tu diseño)
-  
-  botonGuardar = createButton("Guardar imagen");//Boton para SS
-botonGuardar.position(595, height - 180); // ajusta posición si hace falta
-botonGuardar.mousePressed(() => {
-  
-  redraw(); 
-    setTimeout(() => {
-    saveCanvas(cnv, 'poster', 'png'); // descarga poster.png
-  }, 60);
-});
 
-  formaSelect = createSelect();//Boton de opciones
-  formaSelect.position(595, height - 450);
+  botonGuardar = createButton("Guardar imagen"); //Boton para SS
+  botonGuardar.position(40, height - 180); // ajusta posición si hace falta
+  botonGuardar.mousePressed(() => {
+    redraw();
+    setTimeout(() => {
+      saveCanvas(cnv, "poster", "png"); // descarga poster.png
+    }, 60);
+  });
+
+  formaSelect = createSelect(); //Boton de opciones
+  formaSelect.position(40, height - 450);
   formaSelect.option("Escoge un patron");
   formaSelect.option("Círculo");
   formaSelect.option("Cuadrado");
   formaSelect.option("Triángulo");
-  formaSelect.changed(() => { 
+  formaSelect.changed(() => {
     let v = formaSelect.value();
     if (v !== "Escoge un patron") forma = v;
     redraw();
   });
 
-  sliderTamano = createSlider(10, 500, 40, 1);//SLIDER
-  sliderTamano.position(595, height - 430);
-  sliderTamano.input(() => { tamano = sliderTamano.value(); redraw(); });
+  sliderTamano = createSlider(10, 500, 40, 1); //SLIDER
+  sliderTamano.position(40, height - 430);
+  sliderTamano.input(() => {
+    tamano = sliderTamano.value();
+    redraw();
+  });
 
   sliderCantidad = createSlider(1, 22, 6, 1);
-  sliderCantidad.position(595, height - 410);
-  sliderCantidad.input(() => { cantidad = sliderCantidad.value(); redraw(); });
+  sliderCantidad.position(40, height - 410);
+  sliderCantidad.input(() => {
+    cantidad = sliderCantidad.value();
+    redraw();
+  });
 
   inputFrase = createInput("Escribe tu frase");
-  inputFrase.position(595, height - 390);
+  inputFrase.position(40, height - 390);
   inputFrase.input(() => {
     frase = inputFrase.value();
     if (!textoMovido) {
@@ -88,7 +92,7 @@ botonGuardar.mousePressed(() => {
   });
 
   sliderTexto = createSlider(16, 200, 32, 1);
-  sliderTexto.position(595, height - 370);
+  sliderTexto.position(40, height - 370);
   sliderTexto.input(() => {
     tamanoTexto = sliderTexto.value();
     if (!textoMovido) {
@@ -99,15 +103,15 @@ botonGuardar.mousePressed(() => {
   });
 
   sliderEspaciado = createSlider(1, 100, 80, 1);
-  sliderEspaciado.position(595, height - 330);
+  sliderEspaciado.position(40, height - 330);
   sliderEspaciado.input(() => redraw());
 
   sliderGrosor = createSlider(1, 10, 2, 1);
-  sliderGrosor.position(595, height - 310);
+  sliderGrosor.position(40, height - 310);
   sliderGrosor.input(() => redraw());
 
   selectOrientacion = createSelect();
-  selectOrientacion.position(595, height - 350);
+  selectOrientacion.position(40, height - 350);
   selectOrientacion.option("Malla");
   selectOrientacion.option("Horizontal");
   selectOrientacion.option("Vertical");
@@ -115,7 +119,7 @@ botonGuardar.mousePressed(() => {
   selectOrientacion.changed(() => redraw());
 
   selectColorFondo = createSelect();
-  selectColorFondo.position(595, height - 290);
+  selectColorFondo.position(40, height - 290);
   selectColorFondo.option("Color De Fondo");
   selectColorFondo.option("Blanco");
   selectColorFondo.option("Negro");
@@ -124,7 +128,7 @@ botonGuardar.mousePressed(() => {
   selectColorFondo.changed(() => redraw());
 
   selectColorTitulo = createSelect();
-  selectColorTitulo.position(595, height - 269);
+  selectColorTitulo.position(40, height - 269);
   selectColorTitulo.option("Color De Letra");
   selectColorTitulo.option("Negro");
   selectColorTitulo.option("Blanco");
@@ -142,7 +146,7 @@ botonGuardar.mousePressed(() => {
   selectColorMalla.changed(() => redraw());
 
   selectColorPatron = createSelect();
-  selectColorPatron.position(595, height - 450);
+  selectColorPatron.position(40, height - 450);
   selectColorPatron.option("Color");
   selectColorPatron.option("Azul");
   selectColorPatron.option("Negro");
@@ -151,21 +155,21 @@ botonGuardar.mousePressed(() => {
   selectColorPatron.changed(() => redraw());
 
   botonFiguras = createButton("Generar figuras random");
-  botonFiguras.position(595, height - 250);
+  botonFiguras.position(40, height - 250);
   botonFiguras.mousePressed(() => {
     generarFigurasRandom();
     redraw();
   });
 
   botonReiniciar = createButton("Reiniciar lienzo");
-  botonReiniciar.position(595, height - 228);
+  botonReiniciar.position(40, height - 228);
   botonReiniciar.mousePressed(() => {
     window.location.reload();
   });
 
   // Botón para recentrar el texto manualmente al centro del canvas
   botonCentrar = createButton("Centrar texto");
-  botonCentrar.position(595, height - 205);
+  botonCentrar.position(40, height - 205);
   botonCentrar.mousePressed(() => {
     textoX = width / 2;
     textoY = height / 2;
@@ -174,12 +178,12 @@ botonGuardar.mousePressed(() => {
   });
 
   // botón para generar líneas aleatorias
-botonLineas = createButton("Generar líneas random");
-botonLineas.position(595, height - 155); // ajusta posición si hace falta
-botonLineas.mousePressed(() => {
-  generarLineasRandom();
-  redraw();
-});
+  botonLineas = createButton("Generar líneas random");
+  botonLineas.position(40, height - 155); // ajusta posición si hace falta
+  botonLineas.mousePressed(() => {
+    generarLineasRandom();
+    redraw();
+  });
   noLoop();
 }
 
@@ -288,21 +292,21 @@ function draw() {
   }
 
   // Dibujar líneas aleatorias
-for (let L of lineasRandom) {
-  strokeWeight(L.sw);
-  if (L.col === "negro") stroke(0, L.alpha);
-  else if (L.col === "blanco") stroke(255, L.alpha);
-  else if (L.col === "rojo") stroke(200, 50, 50, L.alpha);
-  else if (L.col === "azul") stroke(50, 100, 200, L.alpha);
-  // dibujar línea
-  line(L.x1, L.y1, L.x2, L.y2);
-}
-
+  for (let L of lineasRandom) {
+    strokeWeight(L.sw);
+    if (L.col === "negro") stroke(0, L.alpha);
+    else if (L.col === "blanco") stroke(255, L.alpha);
+    else if (L.col === "rojo") stroke(200, 50, 50, L.alpha);
+    else if (L.col === "azul") stroke(50, 100, 200, L.alpha);
+    // dibujar línea
+    line(L.x1, L.y1, L.x2, L.y2);
+  }
 
   // Título y selección
   let colorTitulo = selectColorTitulo.value();
   let fillColor;
-  if (colorTitulo === "Color De Letra" || colorTitulo === "Negro") fillColor = color(0);
+  if (colorTitulo === "Color De Letra" || colorTitulo === "Negro")
+    fillColor = color(0);
   else if (colorTitulo === "Blanco") fillColor = color(255);
   else if (colorTitulo === "Azul") fillColor = color(50, 100, 200);
   else if (colorTitulo === "Rojo") fillColor = color(200, 50, 50);
@@ -333,7 +337,7 @@ function keyPressed() {
     else if (keyCode === RIGHT_ARROW) textoX += paso;
     else if (keyCode === UP_ARROW) textoY -= paso;
     else if (keyCode === DOWN_ARROW) textoY += paso;
-    else if (key === 'e' || key === 'E') inputFrase.elt.focus();
+    else if (key === "e" || key === "E") inputFrase.elt.focus();
     textoMovido = true;
     redraw();
   }
@@ -347,12 +351,10 @@ function dibujarForma(x, y, s, tipo = forma) {
     rectMode(CENTER);
     rect(x, y, s, s);
   } else if (tipo === "Triángulo") {
-    let h = s * sqrt(3) / 2;
+    let h = (s * sqrt(3)) / 2;
     triangle(x, y - h / 2, x - s / 2, y + h / 2, x + s / 2, y + h / 2);
   }
 }
-
-
 
 function dibujarMalla() {
   let espaciado = sliderEspaciado.value();
@@ -397,7 +399,7 @@ function generarFigurasRandom() {
       y: random(160, height - 80),
       tam: random(20, 60),
       tipo: random(["Círculo", "Cuadrado", "Triángulo"]),
-      color: random(["blanco", "negro"])
+      color: random(["blanco", "negro"]),
     });
   }
 }

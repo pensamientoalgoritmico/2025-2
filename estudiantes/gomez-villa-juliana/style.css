@@ -28,6 +28,16 @@ body {
   text-align: left;
 }
 
+#return {
+  font-size: 20px;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+}
+
+#return:hover {
+  color: #39ff14;
+}
+
 #info h1 {
   font-family: 'Cheekbone', serif;
   font-size: 32px;

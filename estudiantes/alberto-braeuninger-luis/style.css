@@ -14,7 +14,7 @@ canvas {
 /*este elemento centra el canvas */
 #canvasContainer{
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ h2{
 
 #return{
   color:white;
-  font-size:100px;
+  font-size:20px;
   text-decoration:none;
 }
 

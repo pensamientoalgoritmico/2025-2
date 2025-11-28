@@ -41,7 +41,6 @@ let aplicarFiltroCalido = false;
 let aplicarFiltroFrio = false;
 let narrativaGenerada = null;
 
-
 //Function
 function preload() {
   fondoInicio = loadImage("assets/lugar/fondoInicio.jpg");
@@ -157,12 +156,11 @@ function preload() {
 
 //Setup
 function setup() {
-  createCanvas(1100, 800);
-
+  createCanvas(1100, 800).parent("canvasContainer");
   //Botón de inicio
   botonInicio = createButton("Comenecemos");
-  fijarEstilo(botonInicio, width/2-160, height / 2 +350);
-  
+  fijarEstilo(botonInicio, width / 2 - 160, height / 2 + 350);
+
   //estilos estética botón
   botonInicio.size(300, 80);
   botonInicio.style("background-color", "#871E07");
@@ -176,7 +174,7 @@ function setup() {
 
   //Sliders y botones de los distintos estados
   sliderVolumen = createSlider(0, 1, 0.5, 0.1);
-      fijarEstilo(sliderVolumen, 20, 320);
+  fijarEstilo(sliderVolumen, 20, 320);
   sliderVolumen.style("width", "200px");
   sliderVolumen.hide();
 
@@ -191,7 +189,7 @@ function setup() {
   sliderIluminacion.hide();
 
   botonRepetirAudio = createButton("Repetir Audio");
-fijarEstilo(botonRepetirAudio, 20, 390);
+  fijarEstilo(botonRepetirAudio, 20, 390);
   botonRepetirAudio.mousePressed(() => {
     if (audioSeleccionado) {
       audioSeleccionado.stop();
@@ -211,7 +209,7 @@ fijarEstilo(botonRepetirAudio, 20, 390);
   botonFiltroCalido.hide();
 
   botonFiltroFrio = createButton("Filtro Frío");
- fijarEstilo(botonFiltroFrio, 20, 430);
+  fijarEstilo(botonFiltroFrio, 20, 430);
   botonFiltroFrio.hide();
   botonFiltroFrio.mousePressed(() => {
     aplicarFiltroFrio = true;
@@ -220,14 +218,14 @@ fijarEstilo(botonRepetirAudio, 20, 390);
   botonFiltroFrio.hide();
 
   botonColorTexto = createButton("Cambiar color texto");
-     fijarEstilo(botonColorTexto, 20, 390);
+  fijarEstilo(botonColorTexto, 20, 390);
   botonColorTexto.mousePressed(() => {
     colorTexto = colorTexto === "#FFFFFF" ? "#FFD700" : "#FFFFFF";
   });
   botonColorTexto.hide();
 
   botonOtroTexto = createButton("Otro texto");
- fijarEstilo(botonOtroTexto, 20, 450);
+  fijarEstilo(botonOtroTexto, 20, 450);
   botonOtroTexto.mousePressed(() => {
     if (lugarSeleccionado >= 0) {
       indiceTextoNarrativo =
@@ -254,7 +252,7 @@ fijarEstilo(botonRepetirAudio, 20, 390);
   botonNarrativa.hide();
 
   botonVisual = createButton("Visual");
-    fijarEstilo(botonVisual, 400, 650);
+  fijarEstilo(botonVisual, 400, 650);
   botonVisual.size(300, 60);
   botonVisual.style("background-color", "#476087");
   botonVisual.style("color", "#FFFFFF");
@@ -272,7 +270,7 @@ fijarEstilo(botonRepetirAudio, 20, 390);
   botonVisual.hide();
 
   botonSonora = createButton("Sonora");
-     fijarEstilo(botonSonora, 400, 750);
+  fijarEstilo(botonSonora, 400, 750);
   botonSonora.size(300, 60);
   botonSonora.style("background-color", "#8a4624");
   botonSonora.style("color", "#FFFFFF");
@@ -310,29 +308,28 @@ fijarEstilo(botonRepetirAudio, 20, 390);
   botonPlayPause.size(100, 40);
   botonPlayPause.mousePressed(togglePlayPause);
   botonPlayPause.hide();
-  
-  botonDescargar = createButton("Descargar");
-fijarEstilo(botonDescargar, 960, 20);
-botonDescargar.size(150, 40);
-botonDescargar.style("background-color", "#333");
-botonDescargar.style("color", "#fff");
-botonDescargar.style("border", "none");
-botonDescargar.style("border-radius", "8px");
-botonDescargar.style("cursor", "pointer");
-botonDescargar.hide();
 
-botonDescargar.mousePressed(() => {
-  if (estado === 3 && experiencia === "narrativa" && narrativaGenerada) {
-    // Descargar narrativa como archivo de texto
-    saveStrings([narrativaGenerada], "narrativa.txt");
-  } else {
-    // Descargar el canvas como imagen
-    saveCanvas("mi_experiencia", "png");
-  }
-});
-  
+  botonDescargar = createButton("Descargar");
+  fijarEstilo(botonDescargar, 960, 20);
+  botonDescargar.size(150, 40);
+  botonDescargar.style("background-color", "#333");
+  botonDescargar.style("color", "#fff");
+  botonDescargar.style("border", "none");
+  botonDescargar.style("border-radius", "8px");
+  botonDescargar.style("cursor", "pointer");
+  botonDescargar.hide();
+
+  botonDescargar.mousePressed(() => {
+    if (estado === 3 && experiencia === "narrativa" && narrativaGenerada) {
+      // Descargar narrativa como archivo de texto
+      saveStrings([narrativaGenerada], "narrativa.txt");
+    } else {
+      // Descargar el canvas como imagen
+      saveCanvas("mi_experiencia", "png");
+    }
+  });
 }
- 
+
 //Draw
 function draw() {
   background(220);
@@ -344,7 +341,7 @@ function draw() {
   } else if (estado === 2) {
     mostrarOpcionesExperiencia();
   } else if (estado === 3) {
-   if (experiencia === "visual") mostrarExperienciaVisual();
+    if (experiencia === "visual") mostrarExperienciaVisual();
     else if (experiencia === "sonora") mostrarExperienciaSonora();
     else if (experiencia === "narrativa") mostrarExperienciaNarrativa();
   }
@@ -553,7 +550,6 @@ function mostrarExperienciaSonora() {
   if (audioSeleccionado && audioSeleccionado.isPlaying()) {
     audioSeleccionado.setVolume(sliderVolumen.value());
   }
-
 }
 
 function mostrarExperienciaVisual() {
@@ -643,7 +639,7 @@ function mostrarExperienciaNarrativa() {
   botonColorTexto.show();
   botonOtroTexto.show();
   botonDescargar.show();
-  
+
   // Mostrar texto narrativo según lugar y opción
   textAlign(CENTER, TOP);
   textFont(fuenteTanPearl);

@@ -606,42 +606,42 @@ function mousePressed() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   // Re-crear buffer persistente con nuevo tamaño y copiar contenido escalado
-  let newPg = createGraphics(width, height);
-  newPg.clear();
-  newPg.image(pgGraffiti, 0, 0, width, height);
-  pgGraffiti = newPg;
-  // Re-crear capa temporal con nuevo tamaño (limpia trazos temporales al redimensionar)
-  let newTemp = createGraphics(width, height);
-  newTemp.clear();
-  pgTemp = newTemp;
-  // Recalcular edificios y reposicionar UI
-  inicializarEdificios();
-  const marginX = width * 0.03;
-  const topControlsY = 84;
-  const midInstructionOffsetFromBottom = 140;
-  if (select("#ui_titulo")) select("#ui_titulo").position(marginX, 6);
-  if (select("#ui_instr_arriba"))
-    select("#ui_instr_arriba").position(marginX + 6, 6 + 34);
-  if (select("#ui_instr_medio"))
-    select("#ui_instr_medio").position(
-      marginX + 6,
-      height - midInstructionOffsetFromBottom + 30
-    );
-  if (inputNombre) inputNombre.position(marginX, topControlsY);
-  if (inputBogotaEs) inputBogotaEs.position(marginX + 220, topControlsY);
-  if (tamanoSlider) tamanoSlider.position(marginX, topControlsY + 44);
-  if (btnGenerar) btnGenerar.position(marginX + 160, topControlsY + 40);
-  const bottomY = height - 60;
-  if (btnPlay) btnPlay.position(marginX, bottomY);
-  if (selectorPaleta) selectorPaleta.position(marginX + 140, bottomY);
-  if (selectorFigura) selectorFigura.position(marginX + 320, bottomY);
-  if (btnGraff) btnGraff.position(marginX + 500, bottomY);
-  if (btnReset) btnReset.position(marginX, height - 28);
-  if (btnExport) btnExport.position(marginX + 140, height - 28);
-  if (radioBox && radioBox.elt) {
-    radioBox.style("left", marginX + 460 + "px");
-    radioBox.style("top", topControlsY - 6 + "px");
-  } else if (categoryRadio) {
-    categoryRadio.position(marginX + 460, topControlsY + 4);
-  }
+  // let newPg = createGraphics(width, height);
+  // newPg.clear();
+  // newPg.image(pgGraffiti, 0, 0, width, height);
+  // pgGraffiti = newPg;
+  // // Re-crear capa temporal con nuevo tamaño (limpia trazos temporales al redimensionar)
+  // let newTemp = createGraphics(width, height);
+  // newTemp.clear();
+  // pgTemp = newTemp;
+  // // Recalcular edificios y reposicionar UI
+  // inicializarEdificios();
+  // const marginX = width * 0.03;
+  // const topControlsY = 84;
+  // const midInstructionOffsetFromBottom = 140;
+  // if (select("#ui_titulo")) select("#ui_titulo").position(marginX, 6);
+  // if (select("#ui_instr_arriba"))
+  //   select("#ui_instr_arriba").position(marginX + 6, 6 + 34);
+  // if (select("#ui_instr_medio"))
+  //   select("#ui_instr_medio").position(
+  //     marginX + 6,
+  //     height - midInstructionOffsetFromBottom + 30
+  //   );
+  // if (inputNombre) inputNombre.position(marginX, topControlsY);
+  // if (inputBogotaEs) inputBogotaEs.position(marginX + 220, topControlsY);
+  // if (tamanoSlider) tamanoSlider.position(marginX, topControlsY + 44);
+  // if (btnGenerar) btnGenerar.position(marginX + 160, topControlsY + 40);
+  // const bottomY = height - 60;
+  // if (btnPlay) btnPlay.position(marginX, bottomY);
+  // if (selectorPaleta) selectorPaleta.position(marginX + 140, bottomY);
+  // if (selectorFigura) selectorFigura.position(marginX + 320, bottomY);
+  // if (btnGraff) btnGraff.position(marginX + 500, bottomY);
+  // if (btnReset) btnReset.position(marginX, height - 28);
+  // if (btnExport) btnExport.position(marginX + 140, height - 28);
+  // if (radioBox && radioBox.elt) {
+  //   radioBox.style("left", marginX + 460 + "px");
+  //   radioBox.style("top", topControlsY - 6 + "px");
+  // } else if (categoryRadio) {
+  //   categoryRadio.position(marginX + 460, topControlsY + 4);
+  // }
 }

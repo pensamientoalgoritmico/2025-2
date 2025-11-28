@@ -23,6 +23,20 @@ body {
     background-attachment: fixed;
 }
 
+#info {
+  margin: 60px;
+  color: rgb(0, 0, 0);
+  font-family: 'Arial', sans-serif;
+}#return {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#return:hover {
+  color: #39ff14;
+}
+
+
 /* Títulos estilo mural callejero */
 h1 {
     font-size: 50px;

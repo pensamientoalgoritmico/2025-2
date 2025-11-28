@@ -1,7 +1,35 @@
-html, body {
+
+html,
+body {
   margin: 0;
   padding: 0;
+  background: black;
+  color: white;
+  font-family: sans-serif;
 }
+
 canvas {
   display: block;
+}
+
+#info{
+  margin: 60px;
+}
+
+h1{
+  font-weight: normal;
+}
+
+h2{
+   font-weight: normal;
+}
+
+#return{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+#return:hover{
+  color: #39FF14
 }

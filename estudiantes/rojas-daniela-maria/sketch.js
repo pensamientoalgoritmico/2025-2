@@ -11,71 +11,76 @@ let campoNombre;
 let selectorFuente;
 
 function preload() {
-
-  urbanaFont = loadFont('Urbana.ttf');
-  aerosFont = loadFont('Aeros.otf');
-  robloxFont = loadFont('Roblox.ttf');
+  urbanaFont = loadFont("Urbana.ttf");
+  aerosFont = loadFont("Aeros.otf");
+  robloxFont = loadFont("Roblox.ttf");
 }
 
 function setup() {
-let canvas = createCanvas(800, 600);
+  let canvas = createCanvas(800, 600);
   canvas.parent("canvasContainer");
   textAlign(CENTER, CENTER);
   textSize(10);
 
   // Slider para tamaño del edificio 1
   sliderEdificio1 = createSlider(150, 400, 250, 10);
-  sliderEdificio1.position(585, 40);
+  // sliderEdificio1.position(585, 40);
+  sliderEdificio1.position(40, 40);
   sliderEdificio1.class("slider1");
 
   // Slider para tamaño del edificio 2
   sliderEdificio2 = createSlider(150, 400, 350, 10);
-  sliderEdificio2.position(585, 60);
+  // sliderEdificio2.position(585, 60);
+  sliderEdificio2.position(40, 60);
   sliderEdificio2.class("slider2");
 
   // Slider para tamaño del edificio 3
   sliderEdificio3 = createSlider(150, 400, 300, 10);
-  sliderEdificio3.position(585, 80);
+  // sliderEdificio3.position(585, 80);
+  sliderEdificio3.position(40, 80);
   sliderEdificio3.class("slider3");
 
   // Color picker para ventanas
-  colorVentanas = createColorPicker('plum'); 
+  colorVentanas = createColorPicker("plum");
   colorVentanas.position(1110, 500);
   colorVentanas.class("pickerVentanas");
 
   // Selector para hora del día
   selectorHora = createSelect();
   selectorHora.position(1110, 550);
-  selectorHora.option('Mañana');
-  selectorHora.option('Tarde');
-  selectorHora.option('Noche');
-  selectorHora.selected('Mañana');
+  selectorHora.option("Mañana");
+  selectorHora.option("Tarde");
+  selectorHora.option("Noche");
+  selectorHora.selected("Mañana");
   selectorHora.class("selectorHora");
 
   // Campo de texto para nombre del usuario
-  campoNombre = createInput('');
-  campoNombre.position(585, 120);
-  campoNombre.attribute('placeholder', 'Tu nombre');
+  campoNombre = createInput("");
+  // campoNombre.position(585, 120);
+  campoNombre.position(40, 120);
+
+  campoNombre.attribute("placeholder", "Tu nombre");
 
   // Selector de tipografía
   selectorFuente = createSelect();
-  selectorFuente.position(585, 150);
-  selectorFuente.option('Urbana');
-  selectorFuente.option('Aeros');
-  selectorFuente.option('Roblox');
-  selectorFuente.selected('Urbana');
+  // selectorFuente.position(585, 150);
+  selectorFuente.position(40, 150);
+  selectorFuente.option("Urbana");
+  selectorFuente.option("Aeros");
+  selectorFuente.option("Roblox");
+  selectorFuente.selected("Urbana");
   selectorFuente.class("selectorFuente");
 }
 
 function draw() {
   // Fondo según hora del día
   let hora = selectorHora.value();
-  if (hora === 'Mañana') {
+  if (hora === "Mañana") {
     background(176, 196, 222);
-  } else if (hora === 'Tarde') {
-    background(255,146,0); // cálido
-  } else if (hora === 'Noche') {
-    background(13,49,97); // oscuro
+  } else if (hora === "Tarde") {
+    background(255, 146, 0); // cálido
+  } else if (hora === "Noche") {
+    background(13, 49, 97); // oscuro
   }
 
   // Obtener valores de controles
@@ -87,11 +92,11 @@ function draw() {
 
   // Cambiar tipografía según selección
   let fuente = selectorFuente.value();
-  if (fuente === 'Urbana') {
+  if (fuente === "Urbana") {
     textFont(urbanaFont);
-  } else if (fuente === 'Aeros') {
+  } else if (fuente === "Aeros") {
     textFont(aerosFont);
-  } else if (fuente === 'Roblox') {
+  } else if (fuente === "Roblox") {
     textFont(robloxFont);
   }
 
@@ -99,14 +104,13 @@ function draw() {
   fill(255);
   textSize(40);
   if (nombre !== "") {
-    text("Bienvenid@, " + nombre + "!", 470,110);
+    text("Bienvenid@, " + nombre + "!", 470, 110);
   } else {
-    text("Bienvenid@, ", 470,110);
-  
+    text("Bienvenid@, ", 470, 110);
   }
   fill(255);
   textSize(40);
-  text("a la rutina diaria de Bogota", 470,150);
+  text("a la rutina diaria de Bogota", 470, 150);
 
   // Dibujar edificios
   fill(100);
@@ -129,18 +133,17 @@ function draw() {
     rect(460, y, 20, 20);
   }
 
-  
   // Estilo visual adicional
-  fill(0,0,205);
+  fill(0, 0, 205);
   textSize(18);
-  text("Interactua con los botones y", 670,420);
-  text("revela los secretos que Bogota" , 670,440);
-  text("guarda para ti" , 670,460); 
-    // Dibujar flecha dorada hacia la izquierda en (700,550)
-  fill(255, 215, 0);   // dorado
+  text("Interactua con los botones y", 670, 420);
+  text("revela los secretos que Bogota", 670, 440);
+  text("guarda para ti", 670, 460);
+  // Dibujar flecha dorada hacia la izquierda en (700,550)
+  fill(255, 215, 0); // dorado
   stroke(255, 215, 0);
- beginShape();
-  vertex(680, 540);          // punta de la flecha
+  beginShape();
+  vertex(680, 540); // punta de la flecha
   vertex(720, 520);
   vertex(720, 530);
   vertex(760, 530);
@@ -149,4 +152,3 @@ function draw() {
   vertex(720, 560);
   endShape(CLOSE);
 }
-

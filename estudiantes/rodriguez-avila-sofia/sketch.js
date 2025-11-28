@@ -28,8 +28,9 @@ let spray;
 let graffitiLayer;
 let buttonReset;
 
-let posX=380
-let posY=2
+// let posX=380
+let posX = 50;
+let posY = 2;
 //todos los archivos que use
 function preload() {
   //imagenes q voy a usar
@@ -77,7 +78,7 @@ function preload() {
 }
 
 function setup() {
- // Solo cambiar el tamaño del canvas si desea
+  // Solo cambiar el tamaño del canvas si desea
   createCanvas(800, 1100).parent("canvasContainer");
   // Frases
   frases = [
@@ -99,7 +100,7 @@ function setup() {
   ];
   // Color picker
   colorPicker = createColorPicker("#ff0000"); // color inicial
-  colorPicker.position(posX+190, posY+80);
+  colorPicker.position(posX + 190, posY + 80);
 
   // Botón para cambiar color y frase
   buttonColorFrase = createButton("NUEVA FRASE");
@@ -116,7 +117,7 @@ function setup() {
   buttonColorFrase.style("padding", "10px 20px");
   //Boton para descargar poster
   buttonSave = createButton("DESCARGAR");
-  buttonSave.position(posX+170, posY);
+  buttonSave.position(posX + 170, posY);
   buttonSave.mousePressed(() => {
     saveCanvas("poster_final", "jpg"); // guarda como poster_final.png
   });
@@ -124,7 +125,7 @@ function setup() {
 
   // Botón para cambiar visual
   buttonVisual = createButton("VISUAL NUEVO");
-  buttonVisual.position(posX, posY+60);
+  buttonVisual.position(posX, posY + 60);
   buttonVisual.mousePressed(cambiarVisual);
   // estilo placa amarilla
   buttonVisual.style("background-color", "#FFD700");
@@ -136,7 +137,7 @@ function setup() {
   buttonVisual.style("border-radius", "6px");
   buttonVisual.style("padding", "10px 20px");
   buttonReset = createButton("REINICIAR SPRAY");
-  buttonReset.position(posX, posY+120);
+  buttonReset.position(posX, posY + 120);
   buttonReset.mousePressed(limpiarSpray);
 
   // estilo tipo placa
@@ -221,7 +222,7 @@ function draw() {
   }
   //no se si esta bien
   if (mouseIsPressed) {
-   //spray
+    //spray
     for (let r = 15; r > 0; r -= 3) {
       graffitiLayer.noStroke();
       graffitiLayer.fill(0, map(r, 30, 0, 20, 150));
@@ -237,9 +238,9 @@ function draw() {
       graffitiLayer.ellipse(x, y, s, s);
     }
   }
-//movi capa transparente sobre la cual hice el graffitti por que me salia corrida
+  //movi capa transparente sobre la cual hice el graffitti por que me salia corrida
   push();
-  translate(400, 550); 
+  translate(400, 550);
   image(graffitiLayer, 0, 0);
   pop();
   // spray se mueve con el mouse

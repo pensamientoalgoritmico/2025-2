@@ -1,11 +1,10 @@
 //Luisa Beltran 202417075
 
-//Nombre Proyecto: Bogotá en tus manos 
+//Nombre Proyecto: Bogotá en tus manos
 
 // Doy la idea de que Bogotá puede estar al alcance del usuario. Una llave es algo que lo puede personalizar cada persona; la llave, aunque no se piense mucho en la vida, es lo que te lleva a tu hogar, es lo que te representa como persona en tu hogar y tu hogar es donde vives y con eso ya formas parte de Bogotá. Esa llave eres tú y tu representación en la ciudad; por eso es que la llave representa "en tus manos", porque esa llave la llevas contigo siempre y solo la puedes representar tú como a ti te gusta y nadie más tendrá esa llave porque es solo tuya.
 
 // Estoy creando un generador de pertenencia a Bogotá por medio de que la persona puede personalizar su llave: se trata de que al inicio va a salir una caja que diga "haz click para entrar a Bogotá", donde atrás se ve un GIF de la ciudad. Después, al hacer click, se va a abrir el mapa que hice de las localidades de Bogotá y, al tocar una localidad, uno abre esa localidad y van a salir dentro de esa localidad 6 llaves. Cada llave debe poder tener una interacción, que se le pueda poner nombre, se le pueda cambiar de color, el tamaño, cambiar la cabeza de la llave y ponerle algún patrón (la idea es que uno pueda crear su propia llave, simulando que en esa localidad una llave representa mi casa y la llave representa mi pertenencia). Se puede volver atrás al mapa o hacer click en guardar la llave, donde al final te lleva a otra pantalla que diga "¡Felicidades!". Esta llave representa tu pertenencia en Bogotá; nadie más va a tener una igual, es solo tuya..."
-
 
 // voy aqui a estar controlando la pantalla actual
 let estado = "inicio"; //VOLVER A PONER INICIO
@@ -18,7 +17,7 @@ let inputNombre, sliderTamaño, colorPicker, selectForma, selectPatron;
 
 let gif_loadImg;
 
-// Los Centros de cada localidad y el radio para detectar click de entrar a una localidad para agarrar los centros me guie usando el console de ver mi mouse donde toco me sale mi "y" y mi "x" y despues con la distancia fui guiandome para tener el radio 
+// Los Centros de cada localidad y el radio para detectar click de entrar a una localidad para agarrar los centros me guie usando el console de ver mi mouse donde toco me sale mi "y" y mi "x" y despues con la distancia fui guiandome para tener el radio
 let centros = {
   Usaquén: { x: 134, y: 96, r: 80 },
   Chapinero: { x: 334, y: 133, r: 80 },
@@ -43,8 +42,8 @@ let centros = {
 };
 
 //funcion de poder agregar mi GIF al inicio de entrada del generador mi inspiracion fue un referente de p5
-function preload (){
-gif_loadImg = loadImage("assets/bogota.gif");
+function preload() {
+  gif_loadImg = loadImage("assets/bogota.gif");
 }
 
 // el canva
@@ -115,7 +114,11 @@ function pantallaMapa() {
   rectMode(CENTER);
   rect(534, 48, 535, 50, 10);
   fill(0);
-  text("Haz click en alguna localidad o en la que vivas para personalizar tu llave", 530, 48);
+  text(
+    "Haz click en alguna localidad o en la que vivas para personalizar tu llave",
+    530,
+    48
+  );
   rectMode(CORNER);
 }
 
@@ -362,25 +365,30 @@ function mousePressed() {
 function crearInputsPersonalizacion() {
   // el poder poner nombre de la llave
   inputNombre = createInput("Nombre de tu llave");
-  inputNombre.position(width * 0.25, height - 180);
+  //inputNombre.position(width * 0.25, height - 180);
+  inputNombre.position(40, height - 180);
 
   // el de tamaño de la llave
   sliderTamaño = createSlider(30, 100, llaveSeleccionada.tamaño);
-  sliderTamaño.position(width * 0.25, height - 250);
+  // sliderTamaño.position(width * 0.25, height - 250);
+  sliderTamaño.position(40, height - 250);
   // color seleccion
   colorPicker = createColorPicker("#ffffff");
-  colorPicker.position(width * 0.25, height - 220);
+  // colorPicker.position(width * 0.25, height - 220);
+  colorPicker.position(40, height - 220);
 
   // forma de la "cabeza" de la llave
   selectForma = createSelect();
-  selectForma.position(width * 0.25, height - 150);
+  // selectForma.position(width * 0.25, height - 150);
+  selectForma.position(40, height - 150);
   selectForma.option("Circular");
   selectForma.option("Cuadrada");
   selectForma.option("Hexagonal");
 
   // el Patrón que va en la "cabeza" de la llave
   selectPatron = createSelect();
-  selectPatron.position(width * 0.25, height - 120);
+  // selectPatron.position(width * 0.25, height - 120);
+  selectPatron.position(40, height - 120);
   selectPatron.option("Sólido");
   selectPatron.option("Rayas");
   selectPatron.option("Puntos");
