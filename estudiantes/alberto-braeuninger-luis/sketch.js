@@ -137,7 +137,9 @@ function setup() {
   selectColorTitulo.changed(() => redraw());
 
   selectColorMalla = createSelect();
-  selectColorMalla.position(650, height - 350);
+  // selectColorMalla.position(650, height - 350);
+  selectColorMalla.position(70, height - 350);
+
   selectColorMalla.option("Color");
   selectColorMalla.option("Azul");
   selectColorMalla.option("Blanco");
