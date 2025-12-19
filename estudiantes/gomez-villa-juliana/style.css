@@ -74,12 +74,12 @@ body {
   font-family: 'OPTITimesRoman', serif;
   z-index: 1000;        
 }
-
+/* 
 #canvasContainer {
-  margin-top: 20px; /* 🔴 espacio entre panel y canvas */
+  margin-top: 20px; 
   display: flex;
   justify-content: center;
-}
+} */
 
 .panel-titulo {
   width: 100%;
@@ -128,6 +128,13 @@ body {
   margin-top: 0;  
   display: flex;
   justify-content: center;
+  width: 100%;
+  justify-content: center;
+  overflow-x: auto; /* si no cabe, que se pueda hacer scroll horizontal */
+}
+
+canvas{
+  display: block;
 }
 
 /* Paneles específicos */
