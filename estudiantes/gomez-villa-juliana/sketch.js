@@ -153,7 +153,7 @@ function setup() {
 
   //FONDO EN EL SETUP
   // let cnv = createCanvas(windowWidth, windowHeight).parent("canvasContainer");
-  let cnv = createCanvas(1320, 480).parent("canvasContainer");
+  let cnv = createCanvas(1520, 552).parent("canvasContainer");
 
   let downloadBtn = document.getElementById("downloadCanvas");
   downloadBtn.addEventListener("click", () => {
