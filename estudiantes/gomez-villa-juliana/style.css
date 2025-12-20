@@ -131,7 +131,7 @@ body {
   justify-content: center;
   overflow-x: auto; /* si no cabe, que se pueda hacer scroll horizontal */
   min-height: 100vh;
-  background-color: (235, 215, 200, 0.85);
+  background-color: rgba(235, 215, 200, 0.85);
 }
 
 canvas{
